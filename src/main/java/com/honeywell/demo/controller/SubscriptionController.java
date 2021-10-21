@@ -23,4 +23,10 @@ public class SubscriptionController {
     Subscription createSubscription(@RequestBody Subscription subscription) {
         return subscriptionService.createSubscription(subscription);
     }
+    
+    @GetMapping(value="/dashboard/subscriptions")
+    Object getDashboardSubscriptions() {
+    	Object dashboardSubscriptions = subscriptionService.subscription();
+    	return dashboardSubscriptions;
+    }
 }
